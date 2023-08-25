@@ -38,7 +38,8 @@ while True:
         window['todo'].update(value=values['todos'][0])
         
     elif SG.WIN_CLOSED:
-        break
+        exit()
+        #break
 
 
 window.close()
