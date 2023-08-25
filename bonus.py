@@ -13,3 +13,4 @@ compress_button = SG.Button("Compress")
 window = SG.Window("MyApp", layout=[[label1, input_box1, add_button1],[label2, input_box2, add_button2],[compress_button]])
 window.read()
 window.close()
+ 
