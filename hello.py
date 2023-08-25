@@ -1,3 +1,4 @@
+import functions
 import PySimpleGUI as SG
 import os
 
@@ -8,13 +9,18 @@ window = SG.Window("MyApp", layout=[[label], [input_box, add_button]],
                    font=('Helvetica',10))
 
 while True:
-    events, values = window.read()
-    print(events)
+    event, values = window.read()
+    print(event)
     print(values)
-    match events:
-        case "Add":
-            todos = functions.get_todos()
-            new_todos = values
-            todos.append()
+    
+    if event == "Add":
+        todos = functions.get_todos()
+        new_todos = values['todo'] + '\n'
+        todos.append(new_todos)
+        functions.write_todos(todos)
+       
+    elif SG.WIN_CLOSED:
+        break
+
 
 window.close()
