@@ -53,10 +53,10 @@ while True:
         except IndexError:
             SG.popup("Select an item first", font=('Helvetica', 10))
             #print("Select an item first")
-                    
+            
     elif event == "Exit":
         break
-    
+        
     elif event =="todos":
         window['todo'].update(value=values['todos'][0])
         
