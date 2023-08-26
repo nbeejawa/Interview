@@ -12,7 +12,8 @@ add_button2 = SG.FolderBrowse("Choose", key="folder")
 compress_button = SG.Button("Compress")
 output_label = SG.Text(key="output")
 
-window = SG.Window("MyApp", layout=[[label1, input_box1, add_button1],[label2, input_box2, add_button2],
+window = SG.Window("MyApp", layout=[[label1, input_box1, add_button1],
+                                    [label2, input_box2, add_button2],
                                     [compress_button, output_label]])
 
 while True:
@@ -22,7 +23,6 @@ while True:
     folder = values["folder"]
     make_archive(filepaths, folder)
     window["output"].update(value="Compression Completed")
-    
+        
 
 window.close()
- 
