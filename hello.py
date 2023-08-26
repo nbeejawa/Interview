@@ -6,13 +6,22 @@ SG.theme("LightBlue6")
 
 label = SG.Text("Type in a ToDo")
 input_box = SG.InputText(tooltip="Enter ToDo", key="todo")
-add_button = SG.Button("Add", size=10)
+# add_button = SG.Button("Add", size=10)
+add_button = SG.Button(size=2, image_source="add.png", 
+                       mouseover_colors="Black", 
+                       tooltip="Add todo", key="Add")
 list_box = SG.Listbox(values=functions.get_todos(), key="todos", 
                       enable_events=True, size=[45,10])
 
 edit_button = SG.Button("Edit")
-complete_button = SG.Button("Complete")
+
+# complete_button = SG.Button("Complete")
+complete_button = SG.Button(size=6, image_source="complete.png", 
+                            mouseover_colors="Black", 
+                            tooltip="Complete todo", key="Complete")
+
 exit_button = SG.Button("Exit")
+
 clock = SG.Text('', key='clock')
 
 
@@ -31,6 +40,7 @@ while True:
         new_todos = values['todo'] + '\n'
         todos.append(new_todos)
         functions.write_todos(todos)
+        window['todos'].update(values=todos)
 
     elif event == "Edit":
         try:
