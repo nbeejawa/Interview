@@ -5,11 +5,14 @@ import time
 SG.theme("LightBlue6")
 
 label = SG.Text("Type in a ToDo")
+
 input_box = SG.InputText(tooltip="Enter ToDo", key="todo")
+
 # add_button = SG.Button("Add", size=10)
 add_button = SG.Button(size=2, image_source="add.png", 
                        mouseover_colors="Black", 
                        tooltip="Add todo", key="Add")
+
 list_box = SG.Listbox(values=functions.get_todos(), key="todos", 
                       enable_events=True, size=[45,10])
 
